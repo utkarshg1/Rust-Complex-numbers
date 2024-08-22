@@ -61,5 +61,5 @@ fn test_modulus() {
 fn test_argument() {
     let a = Complex::new(3.0, 4.0);
     let result = a.argument();
-    assert!((result - 0.927295).abs() < EPSILON); // atan2(4, 3) ≈ 0.9273 radians
+    assert!((result - 0.927295).abs() < EPSILON);
 }
