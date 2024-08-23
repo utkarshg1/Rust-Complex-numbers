@@ -63,3 +63,10 @@ fn test_argument() {
     let result = a.argument();
     assert!((result - 0.927295).abs() < EPSILON);
 }
+
+#[test]
+fn test_conjugate() {
+    let a = Complex::new(3.0, 4.0);
+    let result = a.conjugate();
+    assert_eq!(result, Complex::new(3.0, -4.0));
+}
