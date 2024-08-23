@@ -23,6 +23,12 @@ fn main() {
 
     let num6 = num1 / num2;
     println!("Division of num1 and num2 is {}", num6);
+
+    println!("\n\nPlease press enter to exit ...");
+    let mut input = String::new();
+    io::stdin()
+        .read_line(&mut input)
+        .expect("Unable to parse string");
 }
 
 fn get_complex_number(prompt: &str) -> Complex {
