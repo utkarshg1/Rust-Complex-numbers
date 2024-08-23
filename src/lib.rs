@@ -19,6 +19,13 @@ impl Complex {
     pub fn argument(&self) -> f64 {
         atan2(self.imag, self.real)
     }
+
+    pub fn conjugate(&self) -> Complex {
+        Complex {
+            real: self.real,
+            imag: -1.0 * self.imag,
+        }
+    }
 }
 
 impl fmt::Display for Complex {
