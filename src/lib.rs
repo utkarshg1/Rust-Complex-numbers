@@ -1,4 +1,4 @@
-use libm::atan2;
+use libm::{atan2, cos, log, sin};
 use std::fmt;
 
 #[derive(Clone, Copy, Debug, PartialEq)] // Ensure PartialEq and Eq are derived
@@ -24,6 +24,20 @@ impl Complex {
         Complex {
             real: self.real,
             imag: -1.0 * self.imag,
+        }
+    }
+
+    pub fn square_root(&self) -> Complex {
+        Complex {
+            real: self.modulus().sqrt() * cos(self.argument() / 2.0),
+            imag: self.modulus().sqrt() * sin(self.argument() / 2.0),
+        }
+    }
+
+    pub fn logarithm(&self) -> Complex {
+        Complex {
+            real: log(self.modulus()),
+            imag: self.argument(),
         }
     }
 }
