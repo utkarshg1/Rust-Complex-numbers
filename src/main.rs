@@ -16,7 +16,7 @@ fn main() {
     println!("Square root of num2 is {}", num2.square_root());
     println!("Exponent of num 2 is {}", num2.exponent());
     println!("Logarithm of num2 is {}", num2.logarithm());
-    let x: Complex = Complex::euler(1.414213, 0.785398);
+    let x: Complex = Complex::new_euler(1.414213, 0.785398);
     println!("Complex number 3 : {}", x);
     println!("\n==================================================\n");
 

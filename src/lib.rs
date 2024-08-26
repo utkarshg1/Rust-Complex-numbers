@@ -12,7 +12,7 @@ impl Complex {
         Complex { real, imag }
     }
 
-    pub fn euler(r: f64, theta: f64) -> Self {
+    pub fn new_euler(r: f64, theta: f64) -> Self {
         Complex {
             real: r * cos(theta),
             imag: r * sin(theta),
@@ -35,7 +35,7 @@ impl Complex {
     }
 
     pub fn square_root(&self) -> Complex {
-        Complex::euler(self.modulus().sqrt(), self.argument() / 2.0)
+        Complex::new_euler(self.modulus().sqrt(), self.argument() / 2.0)
     }
 
     pub fn logarithm(&self) -> Complex {
@@ -46,7 +46,7 @@ impl Complex {
     }
 
     pub fn exponent(&self) -> Complex {
-        Complex::euler(exp(self.real), self.imag)
+        Complex::new_euler(exp(self.real), self.imag)
     }
 }
 
