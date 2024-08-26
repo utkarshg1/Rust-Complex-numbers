@@ -1,4 +1,4 @@
-use libm::{atan2, cos, log, sin};
+use libm::{atan2, cos, exp, log, sin};
 use std::fmt;
 
 #[derive(Clone, Copy, Debug, PartialEq)] // Ensure PartialEq and Eq are derived
@@ -40,14 +40,21 @@ impl Complex {
             imag: self.argument(),
         }
     }
+
+    pub fn exponent(&self) -> Complex {
+        Complex {
+            real: exp(self.real) * cos(self.imag),
+            imag: exp(self.real) * sin(self.imag),
+        }
+    }
 }
 
 impl fmt::Display for Complex {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         if self.imag >= 0.0 {
-            write!(f, "{} + {}i", self.real, self.imag)
+            write!(f, "{:.4} + {:.4}i", self.real, self.imag)
         } else {
-            write!(f, "{} - {}i", self.real, -self.imag)
+            write!(f, "{:.4} - {:.4}i", self.real, -self.imag)
         }
     }
 }

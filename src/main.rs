@@ -6,6 +6,7 @@ fn main() {
     println!("Modulus of num1 is {:.4}", num1.modulus());
     println!("Argument of num1 is {:.4}", num1.argument());
     println!("Square Root of num1 is {}", num1.square_root());
+    println!("Exponent of num1 is {}", num1.exponent());
     println!("Logarithm of num1 is {}", num1.logarithm());
 
     let num2 = get_complex_number("Please enter complex number 2:");
@@ -13,6 +14,7 @@ fn main() {
     println!("Modulus of num2 is {:.4}", num2.modulus());
     println!("Argument of num2 is {:.4}", num2.argument());
     println!("Square root of num2 is {}", num2.square_root());
+    println!("Exponent of num 2 is {}", num2.exponent());
     println!("Logarithm of num2 is {}", num2.logarithm());
     println!("\n==================================================\n");
 
