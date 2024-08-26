@@ -35,10 +35,7 @@ impl Complex {
     }
 
     pub fn square_root(&self) -> Complex {
-        Complex {
-            real: self.modulus().sqrt() * cos(self.argument() / 2.0),
-            imag: self.modulus().sqrt() * sin(self.argument() / 2.0),
-        }
+        Complex::euler(self.modulus().sqrt(), self.argument() / 2.0)
     }
 
     pub fn logarithm(&self) -> Complex {
@@ -49,10 +46,7 @@ impl Complex {
     }
 
     pub fn exponent(&self) -> Complex {
-        Complex {
-            real: exp(self.real) * cos(self.imag),
-            imag: exp(self.real) * sin(self.imag),
-        }
+        Complex::euler(exp(self.real), self.imag)
     }
 }
 
