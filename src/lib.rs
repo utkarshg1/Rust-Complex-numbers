@@ -12,6 +12,13 @@ impl Complex {
         Complex { real, imag }
     }
 
+    pub fn euler(r: f64, theta: f64) -> Self {
+        Complex {
+            real: r * cos(theta),
+            imag: r * sin(theta),
+        }
+    }
+
     pub fn modulus(&self) -> f64 {
         (self.real * self.real + self.imag * self.imag).sqrt()
     }
