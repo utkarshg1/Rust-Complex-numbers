@@ -1,4 +1,4 @@
-use libm::{atan2, cos, exp, log, sin};
+use libm::{atan2, cos, cosh, exp, log, sin, sinh};
 use std::fmt;
 
 #[derive(Clone, Copy, Debug, PartialEq)] // Ensure PartialEq and Eq are derived
@@ -47,6 +47,24 @@ impl Complex {
 
     pub fn exponent(&self) -> Complex {
         Complex::new_euler(exp(self.real), self.imag)
+    }
+
+    pub fn sinc(&self) -> Complex {
+        Complex {
+            real: sin(self.real) * cosh(self.imag),
+            imag: cos(self.real) * sinh(self.imag),
+        }
+    }
+
+    pub fn cosc(&self) -> Complex {
+        Complex {
+            real: cos(self.real) * cos(self.imag),
+            imag: -sin(self.real) * sin(self.imag),
+        }
+    }
+
+    pub fn tanc(&self) -> Complex {
+        self.sinc() / self.cosc()
     }
 }
 

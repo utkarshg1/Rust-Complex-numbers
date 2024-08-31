@@ -8,6 +8,9 @@ fn main() {
     println!("Square Root of num1 is {}", num1.square_root());
     println!("Exponent of num1 is {}", num1.exponent());
     println!("Logarithm of num1 is {}", num1.logarithm());
+    println!("Sin of num1 is {}", num1.sinc());
+    println!("Cos of num1 is {}", num1.cosc());
+    println!("Tan of num1 is {}", num1.tanc());
 
     let num2 = get_complex_number("Please enter complex number 2:");
     println!("The num2 is {}", num2);
@@ -16,6 +19,9 @@ fn main() {
     println!("Square root of num2 is {}", num2.square_root());
     println!("Exponent of num 2 is {}", num2.exponent());
     println!("Logarithm of num2 is {}", num2.logarithm());
+    println!("Sin of num2 is {}", num2.sinc());
+    println!("Cos of num2 is {}", num2.cosc());
+    println!("Tan of num2 is {}", num2.tanc());
     let x: Complex = Complex::new_euler(1.414213, 0.785398);
     println!("Complex number 3 : {}", x);
     println!("\n==================================================\n");
