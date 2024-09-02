@@ -15,7 +15,15 @@ fn main() {
     let add: Complex = num1 + num2;
     let sub: Complex = num1 - num2;
     let mul: Complex = num1*num2;
-    let div: Comples = num1/num2;
+    let div: Complex = num1/num2;
+
+    // can apply functions on complex numbers
+    let e: Complex = num2.exponent();
+    let l: Complex = num2.logarithm();
+    let sqr_root: Complex = num2.sqrt();
+    let s: Complex = num2.sinc();
+    let c: Complex = num2.cosc();
+    let t: Complex = num2.tanc();
 
     // Can print complex numbers directly
     println!("num1 : {}, num2 : {}",num1, num2);
